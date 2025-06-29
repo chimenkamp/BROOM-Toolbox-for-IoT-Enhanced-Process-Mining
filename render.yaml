@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: flask-backend
+    env: python
+    region: frankfurt # or your preferred region
+    buildCommand: |
+      pip install -r requirements.txt
+      cd IOT-PM-Suite
+      npm install
+      npm run build --prod
+    startCommand: gunicorn app:app
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0 # use your Python version
+
