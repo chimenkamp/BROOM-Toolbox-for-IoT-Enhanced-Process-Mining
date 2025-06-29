@@ -1,11 +1,12 @@
 services:
   - type: web
-    name: flask-backend
+    name: BROOM
     env: python
     region: frankfurt # or your preferred region
     buildCommand: |
+      cd IOT-PM-Suite-Backend
       pip install -r requirements.txt
-      cd IOT-PM-Suite
+      cd ../IOT-PM-Suite
       npm install
       npm run build --prod
     startCommand: gunicorn app:app
@@ -13,5 +14,4 @@ services:
     autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
-        value: 3.12.0 # use your Python version
-
+        value: 3.12.0 # Adjust accordingly
