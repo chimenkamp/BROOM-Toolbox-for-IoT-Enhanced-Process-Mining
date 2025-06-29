@@ -1,0 +1,6 @@
+[submodule "IOT-PM-Suite"]
+	path = IOT-PM-Suite
+	url = git@github.com:chimenkamp/IOT-PM-Suite.git
+[submodule "IOT-PM-Suite-Backend"]
+	path = IOT-PM-Suite-Backend
+	url = git@github.com:chimenkamp/IOT-PM-Suite-Backend.git
