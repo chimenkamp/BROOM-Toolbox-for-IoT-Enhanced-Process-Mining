@@ -13,7 +13,7 @@ services:
       cd ../IOT-PM-Suite;
       npm install;
       npm run build --prod;
-    startCommand: gunicorn app:app
+    startCommand: python /IOT-PM-Suite-Backend/app.py
     plan: free
     autoDeploy: true
     envVars:
