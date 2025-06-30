@@ -13,7 +13,7 @@ services:
       cd ../IOT-PM-Suite;
       npm install;
       npm run build --prod;
-    startCommand: python /IOT-PM-Suite-Backend/app.py
+    startCommand: python ../IOT-PM-Suite-Backend/app.py
     plan: free
     autoDeploy: true
     envVars:
