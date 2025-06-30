@@ -2,9 +2,12 @@ services:
   - type: web
     name: BROOM
     env: python
-    region: frankfurt # or your preferred region
+    region: frankfurt
     buildCommand: |
-      git submodule update --init --recursive;
+      git submodule update --init;           
+      git submodule foreach git fetch;      
+      git submodule foreach git checkout main;
+      git submodule foreach git pull;
       cd IOT-PM-Suite-Backend;
       pip install -r requirements.txt;
       cd ../IOT-PM-Suite;
@@ -15,4 +18,4 @@ services:
     autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
-        value: 3.12.0 # Adjust accordingly
+        value: 3.12.0
