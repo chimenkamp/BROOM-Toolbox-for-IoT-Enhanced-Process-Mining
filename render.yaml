@@ -4,12 +4,12 @@ services:
     env: python
     region: frankfurt # or your preferred region
     buildCommand: |
-      git submodule update --init --recursive
-      cd IOT-PM-Suite-Backend
-      pip install -r requirements.txt
-      cd ../IOT-PM-Suite
-      npm install
-      npm run build --prod
+      git submodule update --init --recursive;
+      cd IOT-PM-Suite-Backend;
+      pip install -r requirements.txt;
+      cd ../IOT-PM-Suite;
+      npm install;
+      npm run build --prod;
     startCommand: gunicorn app:app
     plan: free
     autoDeploy: true
